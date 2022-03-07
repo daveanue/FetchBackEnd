@@ -152,7 +152,6 @@ router.post('/spendPoints', [
    Alltransaction.splice(removeZeroPoint[i], 1);
  }
 
- console.log('transaction', Alltransaction);
  res.status(200).send(spendList);
 
 })
