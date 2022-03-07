@@ -92,7 +92,7 @@ When a `payer` adds a negative amount of `points` and the payer has enough point
   {"payer": "DANNON", "points": 300, "timestamp": "2020-10-31T10:00:00Z"}
   ```
 
-## GET route "/points" - Get Points Available Per Payer
+## GET route "/getBalances" - Get Points Available Per Payer
 * This route gives the user their remaining available `points` per `payer`.
 >![Postman 5](/images/postman-5.png)
 
