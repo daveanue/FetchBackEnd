@@ -43,7 +43,7 @@ A back end REST API web service that accepts HTTP requests and returns responses
     ```
 
 ## Making API calls
-Because this server doesn't use any durable data store, there will be no data in the backend whenever the sever is started, which means:
+Because this server doesn't use any durable data store, there will be no data in the backend whenever the server is started, which means:
 * The user will initially have no points
 * There will be no payer transactions
 
