@@ -53,7 +53,7 @@ We will be using **Postman** to make calls to the API.
 * From your acount's home screen, create or use an existing `Workspace` by clicking on `Workspace` in the top left menu bar.
 * Once you're in a workspace, click on `Create a request` on the right under `Getting started`.
 * Your interface should look like the image below.
->![Postman 1](/assets/images/postman-1.jpg)
+>![Postman 1](/images/postman-1.png)
 * Let's start by adding some transactions
 
 ## POST Route "/points" - Add Payer Transaction
@@ -82,7 +82,7 @@ When a `payer` adds a negative amount of `points` and the payer has enough point
 * Under the URL, select `Body` and  check the `raw` radio button and select `JSON` from the dropdown.
 * Enter a valid request body in the section below.
 * Click  `Send` and if the user has enough points, you'll receive a `Status: 200 OK` response in the body section below along with a list showing how many points were spend from each `payer`.
->![Postman 7](/images/postman-7.png)
+>![Postman 7](/images/postman-4.png)
 * The response above is the result of sending sending `{"points": 5000}` to `"/points/spend'` after the following transactions have been added by payers:
   ```
   {"payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z"}
@@ -102,7 +102,7 @@ When a `payer` adds a negative amount of `points` and the payer has enough point
 
 ## GET route "/points" - Get Points Available Per Payer
 * This route gives the user their remaining available `points` per `payer`.
->![Postman 8](/images/postman-8.png)
+>![Postman 8](/images/postman-5.png)
 
 ## Running Tests
 Run tests in [test.js](test/test.js) from the project's main directory:
