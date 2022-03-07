@@ -56,7 +56,7 @@ We will be using **Postman** to make calls to the API.
 >![Postman 1](/images/postman-1.png)
 * Let's start by adding some transactions
 
-## POST Route "/points" - Add Payer Transaction
+## POST Route "/addTransaction" - Add Payer Transaction
 ***REQUEST BODY FORMAT*** 
 ```
 {"payer": <str>, "points": <int>, "timestamp": <ISO8601>}
@@ -72,7 +72,7 @@ We will be using **Postman** to make calls to the API.
 
 When a `payer` adds a negative amount of `points` and the payer has enough points to cover the negative amount, the negative points will be deducted to 0 and removed; and the positive point will be reduced.
 
-## POST route "/points/spend" - Spend User Points
+## POST route "/spendPoints" - Spend User Points
 ***REQUEST BODY FORMAT***
 ```
 {"points": <str>}
@@ -82,7 +82,7 @@ When a `payer` adds a negative amount of `points` and the payer has enough point
 * Under the URL, select `Body` and  check the `raw` radio button and select `JSON` from the dropdown.
 * Enter a valid request body in the section below.
 * Click  `Send` and if the user has enough points, you'll receive a `Status: 200 OK` response in the body section below along with a list showing how many points were spend from each `payer`.
->![Postman 7](/images/postman-4.png)
+>![Postman 4](/images/postman-4.png)
 * The response above is the result of sending sending `{"points": 5000}` to `"/points/spend'` after the following transactions have been added by payers:
   ```
   {"payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z"}
@@ -92,17 +92,9 @@ When a `payer` adds a negative amount of `points` and the payer has enough point
   {"payer": "DANNON", "points": 300, "timestamp": "2020-10-31T10:00:00Z"}
   ```
 
-### POST route "/points/spend" Errors
-* A `Status: 422 Unprocessable Entity` error response will occur if a request body is sent with the wrong format:
-  * User doesn't have enough points to spend
-  * User spends 0 points
-  * Missing parameters
-  * Additional parameters
-  * Paramets with wrong type (e.g. points in string format)
-
 ## GET route "/points" - Get Points Available Per Payer
 * This route gives the user their remaining available `points` per `payer`.
->![Postman 8](/images/postman-5.png)
+>![Postman 5](/images/postman-5.png)
 
 ## Running Tests
 Run tests in [test.js](test/test.js) from the project's main directory:
