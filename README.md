@@ -62,7 +62,7 @@ We will be using **Postman** to make calls to the API.
 {"payer": <str>, "points": <int>, "timestamp": <ISO8601>}
 ```
 * Click the dropdown that says `GET` and select `POST`.
-* Enter the server port with the `/points` endpoint.
+* Enter the server port with the `/addTransaction` endpoint.
 >![Postman 2](/images/postman-2.png)
 * Under the URL, select `Body`, check the `raw` radio button, and select `JSON` from the dropdown.
 >![Postman 3](/images/postman-3.png)
@@ -78,12 +78,12 @@ When a `payer` adds a negative amount of `points` and the payer has enough point
 {"points": <str>}
 ```
 * Make sure the request type is set to `POST`.
-* Enter the server port with the `/points/spend` endpoint.
+* Enter the server port with the `/spendPoints` endpoint.
 * Under the URL, select `Body` and  check the `raw` radio button and select `JSON` from the dropdown.
 * Enter a valid request body in the section below.
 * Click  `Send` and if the user has enough points, you'll receive a `Status: 200 OK` response in the body section below along with a list showing how many points were spend from each `payer`.
 >![Postman 4](/images/postman-4.png)
-* The response above is the result of sending sending `{"points": 5000}` to `"/points/spend'` after the following transactions have been added by payers:
+* The response above is the result of sending sending `{"points": 5000}` to `"/spendPoints'` after the following transactions have been added by payers:
   ```
   {"payer": "DANNON", "points": 1000, "timestamp": "2020-11-02T14:00:00Z"}
   {"payer": "UNILEVER", "points": 200, "timestamp": "2020-10-31T11:00:00Z"}
